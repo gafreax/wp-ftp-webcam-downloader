@@ -3,7 +3,7 @@
 Plugin Name: FTP Webcam Image Downloader
 Description: Semplice downloader di file via ftp, Puoi trovare la configurazione nel menu impostazioni
 alla voce: Webcam Downloader Option
-Version:     1.0
+Version:     1.1
 Author:      Gabriele Fontana <gafreax@gmail.com>
 License:     GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -58,7 +58,6 @@ function download_image()
             throw new ErrorException('can not login with ' . $login);
         }
         error_log($msglog . 'Successfully written to '. $localfile);
-        copy($up['basedir']  . "/" .$localfile, $up['basedir']  . "/" . $localfile.'-'. date('H:i') . '.jpg');
         if ($connection) {
             ftp_close($connection);
         }
